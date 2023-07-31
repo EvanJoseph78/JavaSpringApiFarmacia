@@ -11,3 +11,4 @@ Ordem de commits
     - Flyway Migration -> faz as migrations das databases
     - Spring Data JPA -> criação de entidades e integração com banco
 --
+4 - Criando entidade para banco de dados
