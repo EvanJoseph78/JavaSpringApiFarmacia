@@ -14,4 +14,5 @@ public class RemedioControler {
     public void cadastrarRemedio(@RequestBody DadosCadastroRemedio json) {
         System.out.println(json);
     }
+
 }
