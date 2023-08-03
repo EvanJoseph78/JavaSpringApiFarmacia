@@ -22,10 +22,21 @@ import lombok.Setter;
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Remedio {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) // gera ids automaticamente no banco
+
+    public Remedio(DadosCadastroRemedio dados) {
+        this.nome = dados.nome();
+        this.via = dados.via();
+        this.lote = dados.lote();
+        this.quantidade = dados.quantidade();
+        this.validade = dados.validade();
+        this.laboratorio = dados.laboratorio();
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // gera ids automaticamente no banco
     private Long id;
     private String nome;
-    
+
     @Enumerated(EnumType.STRING)
     private Via via;
     private String lote;
@@ -36,4 +47,3 @@ public class Remedio {
     private String validade;
 
 }
-    

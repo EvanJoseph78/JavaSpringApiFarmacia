@@ -12,3 +12,4 @@ Ordem de commits
     - Spring Data JPA -> criação de entidades e integração com banco
 --
 4 - Criando entidade para banco de dados
+5 - Usando Flyway para controle de migrações V1__create-table-remedio
