@@ -13,3 +13,4 @@ Ordem de commits
 --
 4 - Criando entidade para banco de dados
 5 - Usando Flyway para controle de migrações V1__create-table-remedio
+6 - Alteração no tipo de dados de quantidade para int na migration
