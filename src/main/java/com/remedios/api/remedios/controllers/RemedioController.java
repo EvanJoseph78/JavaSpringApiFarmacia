@@ -3,7 +3,9 @@ package com.remedios.api.remedios.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,22 +27,41 @@ public class RemedioController {
     @Autowired
     private RemedioRepository repository;
 
+    /**
+     * @param dados
+     *              Responsável pela criação de registros
+     */
     @PostMapping
     @Transactional
     public void cadastrarRemedio(@RequestBody @Valid DadosCadastroRemedio dados) {
         repository.save(new Remedio(dados));
     }
 
+    /**
+     * @return
+     *         Responsável pela listagem dos registros
+     */
     @GetMapping
-    public List<DadosListageRemedio> listar(){
+    public List<DadosListageRemedio> listar() {
         return repository.findAll().stream().map(DadosListageRemedio::new).toList();
     }
 
+    /**
+     * @param dados
+     *              Responsável pela atualização de um registro
+     * 
+     */
     @PutMapping
     @Transactional
     public void atualizar(@RequestBody @Valid DadosAtualizarRemedio dados) {
         var remedio = repository.getReferenceById(dados.id());
         remedio.atualizarInfomacoes(dados);
-        
+
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluir(@PathVariable Long id) {
+        repository.deleteById(id);
     }
 }
