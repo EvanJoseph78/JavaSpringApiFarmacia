@@ -27,6 +27,7 @@ import lombok.Setter;
 public class Remedio {
 
     public Remedio(DadosCadastroRemedio dados) {
+        this.ativo = true;
         this.nome = dados.nome();
         this.via = dados.via();
         this.lote = dados.lote();
@@ -48,6 +49,7 @@ public class Remedio {
     private Laboratorio laboratorio;
     private int quantidade;
     private LocalDate validade;
+    private boolean ativo;
 
     public void atualizarInfomacoes(@Valid DadosAtualizarRemedio dados) {
         if (dados.nome() != null) {
@@ -61,6 +63,10 @@ public class Remedio {
         if (dados.laboratorio() != null ) {
             this.laboratorio = dados.laboratorio();
         }
+    }
+
+    public void inativar() {
+        this.ativo = false;
     }
 
 }

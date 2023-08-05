@@ -6,7 +6,7 @@ import com.remedios.api.remedios.Laboratorio;
 import com.remedios.api.remedios.Remedio;
 import com.remedios.api.remedios.Via;
 
-public record DadosListageRemedio(
+public record DadosListagemRemedio(
         Long id,
         String nome,
         Via via,
@@ -14,7 +14,7 @@ public record DadosListageRemedio(
         Laboratorio laboratorio,
         LocalDate validade) {
 
-    public DadosListageRemedio(Remedio remedio) {
+    public DadosListagemRemedio(Remedio remedio) {
         this(
                 remedio.getId(),
                 remedio.getNome(),

@@ -42,8 +42,8 @@ public class RemedioController {
      *         Responsável pela listagem dos registros
      */
     @GetMapping
-    public List<DadosListageRemedio> listar() {
-        return repository.findAll().stream().map(DadosListageRemedio::new).toList();
+    public List<DadosListagemRemedio> listar() {
+        return repository.findAllByAtivoTrue().stream().map(DadosListagemRemedio::new).toList();
     }
 
     /**
@@ -59,9 +59,21 @@ public class RemedioController {
 
     }
 
+    /**
+     * @param id
+     *           Responsável por excluir um registro
+     */
     @DeleteMapping("/{id}")
     @Transactional
     public void excluir(@PathVariable Long id) {
         repository.deleteById(id);
     }
+
+    @DeleteMapping("inativar/{id}")
+    @Transactional
+    public void inativar(@PathVariable Long id) {
+        var remedio = repository.getReferenceById(id);
+        remedio.inativar();
+    }
+    
 }
