@@ -7,6 +7,7 @@ import com.remedios.api.remedios.Remedio;
 import com.remedios.api.remedios.Via;
 
 public record DadosListageRemedio(
+        Long id,
         String nome,
         Via via,
         String lote,
@@ -14,7 +15,9 @@ public record DadosListageRemedio(
         LocalDate validade) {
 
     public DadosListageRemedio(Remedio remedio) {
-        this(remedio.getNome(),
+        this(
+                remedio.getId(),
+                remedio.getNome(),
                 remedio.getVia(),
                 remedio.getLote(),
                 remedio.getLaboratorio(),
