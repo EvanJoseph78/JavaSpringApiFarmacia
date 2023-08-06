@@ -19,3 +19,4 @@ Ordem de commits
 7. Adicionando o método put (CRUD)
 8. Adicionando o verbo delete (CRUD)
 9. Adicionando exclusão lógica, desativando um registro do estoque. Criando nova migration.
+10. Criando response entity
