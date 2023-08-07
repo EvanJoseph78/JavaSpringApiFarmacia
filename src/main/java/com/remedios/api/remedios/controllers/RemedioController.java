@@ -37,8 +37,9 @@ public class RemedioController {
    */
   @PostMapping
   @Transactional
-  public ResponseEntity<DadosDetalhamentoRemedio> cadastrarRemedio(@RequestBody @Valid DadosCadastroRemedio dados, UriComponentsBuilder uriBuilder) {
-    var remedio = new Remedio(dados); 
+  public ResponseEntity<DadosDetalhamentoRemedio> cadastrarRemedio(@RequestBody @Valid DadosCadastroRemedio dados,
+      UriComponentsBuilder uriBuilder) {
+    var remedio = new Remedio(dados);
     repository.save(remedio);
     repository.save(new Remedio(dados));
 
@@ -101,6 +102,12 @@ public class RemedioController {
     remedio.reativar();
 
     return ResponseEntity.noContent().build();
+  }
+
+  @GetMapping("/{id}") 
+  public ResponseEntity<DadosDetalhamentoRemedio> detalhar(@PathVariable Long id) {
+    var remedio = repository.getReferenceById(id);
+    return ResponseEntity.ok(new DadosDetalhamentoRemedio(remedio));
   }
 
 }
