@@ -104,7 +104,7 @@ public class RemedioController {
     return ResponseEntity.noContent().build();
   }
 
-  @GetMapping("/{id}") 
+  @GetMapping("/{id}")
   public ResponseEntity<DadosDetalhamentoRemedio> detalhar(@PathVariable Long id) {
     var remedio = repository.getReferenceById(id);
     return ResponseEntity.ok(new DadosDetalhamentoRemedio(remedio));
