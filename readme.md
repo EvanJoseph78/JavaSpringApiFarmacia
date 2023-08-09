@@ -20,3 +20,5 @@ Ordem de commits
 8. Adicionando o verbo delete (CRUD)
 9. Adicionando exclusão lógica, desativando um registro do estoque. Criando nova migration.
 10. Criando response entity
+11. Lidando com erros
+12. Lidadando com erros 
