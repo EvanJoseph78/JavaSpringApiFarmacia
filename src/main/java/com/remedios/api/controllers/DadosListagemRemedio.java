@@ -1,4 +1,4 @@
-package com.remedios.api.remedios.controllers;
+package com.remedios.api.controllers;
 
 import java.time.LocalDate;
 

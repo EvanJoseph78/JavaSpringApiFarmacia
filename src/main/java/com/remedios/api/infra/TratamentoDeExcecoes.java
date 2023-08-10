@@ -1,4 +1,4 @@
-package com.remedios.api.remedios.infra;
+package com.remedios.api.infra;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
