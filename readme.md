@@ -24,4 +24,5 @@ Ordem de commits
 12. Lidadando com erros 
 13. Adicionado retorno para os erros
 14. Adicionando dependencias do Spring security
+15. Autentification metho
 
