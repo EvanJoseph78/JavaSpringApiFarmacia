@@ -22,3 +22,6 @@ Ordem de commits
 10. Criando response entity
 11. Lidando com erros
 12. Lidadando com erros 
+13. Adicionado retorno para os erros
+14. Adicionando dependencias do Spring security
+
